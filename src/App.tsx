@@ -1,16 +1,21 @@
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RepositoriesSearchForm from "Repositories/Components/SearchForm";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import styles from "./App.module.css";
+import Home from "Home";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      // ✅ globally default to 20 seconds
+      staleTime: 1000 * 20
+    }
+  }
+});
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <h1 className={styles.title}>My Example App</h1>
-      <RepositoriesSearchForm />
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <Home />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };
