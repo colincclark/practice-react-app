@@ -3,8 +3,8 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
-import { testQueryClient } from "tests/utils";
-import server from "./tests/server";
+import { testQueryClient } from "test-utils/utils";
+import server from "./test-utils/server";
 
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());

@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import renderWithClient from "tests/utils";
+import renderWithClient from "test-utils/utils";
 import Repository from "./Repository";
 
 describe("Repository", () => {

@@ -1,5 +1,9 @@
 import DefaultQueryResponse from "utils/hooks";
 
+export type RepositoryParams = {
+  name: string;
+};
+
 export type RepositoryType =
   | {
       name: string;

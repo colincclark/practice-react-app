@@ -4,8 +4,8 @@ import {
   dataNoRepositories,
   dataOneRepository,
   dataRepository
-} from "tests/mocks/repositories";
-import renderWithClient from "tests/utils";
+} from "test-utils/mocks/repositories";
+import renderWithClient from "test-utils/utils";
 import RepositoriesList from "./RepositoriesList";
 
 describe("RepositoriesList", () => {

@@ -1,10 +1,7 @@
-import { useState } from "react";
-import useGetRepository from "Repositories/hooks/useGetRepository";
 import {
   SearchRepositoryType,
   SearchRepositoriesResponse
-} from "Repositories/types";
-import Repository from "./Repository";
+} from "Routes/Repositories/types";
 
 const RepositoriesList: React.FC<SearchRepositoriesResponse> = ({
   data,
@@ -12,20 +9,6 @@ const RepositoriesList: React.FC<SearchRepositoriesResponse> = ({
   isError,
   isFetching
 }) => {
-  const [selectedRepoName, setSelectedRepoName] = useState("");
-
-  const getRepositoryQuery = useGetRepository(selectedRepoName);
-
-  const handlePackageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
-    getRepositoryQuery.refetch();
-  };
-
-  const handlePackageMouseOver = (name: string) => {
-    setSelectedRepoName(name);
-  };
-
   if (isFetching) {
     return <p>Loading...</p>;
   }
@@ -48,9 +31,7 @@ const RepositoriesList: React.FC<SearchRepositoriesResponse> = ({
             return (
               <li key={`${name}${key}`}>
                 <a
-                  href="#"
-                  onClick={(e) => handlePackageClick(e)}
-                  onMouseOver={() => handlePackageMouseOver(name)}
+                  href={`/repo/${name}`}
                 >
                   {name}
                 </a>
@@ -61,14 +42,6 @@ const RepositoriesList: React.FC<SearchRepositoriesResponse> = ({
       )}
       {data && data?.objects && (
         <p>Returned {data?.objects.length} repositories</p>
-      )}
-      {selectedRepoName && (
-        <Repository
-          data={getRepositoryQuery.data}
-          error={getRepositoryQuery.error}
-          isError={getRepositoryQuery.isError}
-          isFetching={getRepositoryQuery.isFetching}
-        />
       )}
     </>
   );

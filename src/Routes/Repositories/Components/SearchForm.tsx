@@ -1,7 +1,7 @@
 import { useState } from "react";
-import useGetRepositories from "Repositories/hooks/useGetRepositories";
-import repositoryKeys from "Repositories/hooks/repositoryKeys";
-import { queryClient } from "App";
+import useGetRepositories from "Routes/Repositories/hooks/useGetRepositories";
+import repositoryKeys from "Routes/Repositories/hooks/repositoryKeys";
+import { queryClient } from "index";
 import RepositoriesList from "./RepositoriesList";
 import styles from "./SearchForm.module.css";
 

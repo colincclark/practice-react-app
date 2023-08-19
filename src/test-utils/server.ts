@@ -1,5 +1,5 @@
 import { setupServer } from "msw/node";
-import { handlers } from "tests/handlers/repositories";
+import { handlers } from "test-utils/handlers/repositories";
 
 const server = setupServer(...handlers);
 

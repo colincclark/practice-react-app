@@ -1,0 +1,21 @@
+nav {
+  border-bottom: 1px solid #000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 12px;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: green;
+}

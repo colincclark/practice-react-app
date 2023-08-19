@@ -1,6 +1,6 @@
 import user from "@testing-library/user-event";
 import { screen } from "@testing-library/react";
-import renderWithClient from "tests/utils";
+import renderWithClient from "test-utils/utils";
 import SearchForm from "./SearchForm";
 
 describe("SearchForm", () => {

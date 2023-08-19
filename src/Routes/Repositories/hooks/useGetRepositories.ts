@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { SearchRepositoriesType } from "Repositories/types";
+import { SearchRepositoriesType } from "Routes/Repositories/types";
 import repositoryKeys from "./repositoryKeys";
 
 const fetchRepositories = (term: string): Promise<SearchRepositoriesType> =>
